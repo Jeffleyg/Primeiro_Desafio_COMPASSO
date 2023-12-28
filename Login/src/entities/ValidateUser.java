@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class ValidateUser {
-	private Map<String, EnterUser> users; // estrurura de dados que usamos
+	private Map<String, User> users; // estrurura de dados que usamos
 	
 	private Map<String, LocalDate> times;
 	
@@ -16,15 +16,15 @@ public class ValidateUser {
 	}
 
 	public boolean Verificat(String username, String password) { // verificação se o login está dentro do banco
-		EnterUser user = users.get(username);
+		User user = users.get(username);
 		return user != null && user.getPassword().equals(password);
 	}
 	
 	public void MiUsers() { // usamos como nosso banco de dados
 		
-		users.put("Jeffley", new EnterUser("Jeffley", "1234"));
-		users.put("Compasso", new EnterUser("Compasso", "Inovacao"));
-		users.put("SpringBoot", new EnterUser("SpringBoot", "DataBase"));
+		users.put("Jeffley", new User("Jeffley", "1234"));
+		users.put("Compasso", new User("Compasso", "Inovacao"));
+		users.put("SpringBoot", new User("SpringBoot", "DataBase"));
 	}
 	
 	//funçao de saida da messagem bom dia, boa tarde, boa noite

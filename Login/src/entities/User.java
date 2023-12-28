@@ -1,14 +1,14 @@
 package entities;
 
-public class EnterUser {
+public class User {
 	
 	private String username;
 	private String password;
 	
-	public EnterUser() {
+	public User() {
 	}
 
-	public EnterUser(String users, String password) {
+	public User(String users, String password) {
 		super();
 		this.username = users;
 		this.password = password;
