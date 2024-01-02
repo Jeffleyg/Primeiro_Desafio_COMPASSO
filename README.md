@@ -1,11 +1,11 @@
 Desafios de Estágio - SpringBoot/AWS (Compass UOL)
-1. Bonus Access (bonus.java)
+1. Bonus Access (Program.java)
 Crie um programa para determinar se um cliente tem acesso a um bônus específico com base em critérios como histórico de compras, valor de compras, etc. Utilize um Map para armazenar os dados e uma classe Employee.java com o método Bonus para processar o bônus.
 
-2. EmotionIcons (emotionIcon.java)
+2. EmotionIcons (Program.java)
 Desenvolva um programa que analise uma string e determine se ela contém emoticons como :-)(divertido) ou :-((chateado). Utilize uma lista genérica para resolver o problema, permitindo o uso com diferentes tipos de dados, como Strings, Integers, etc.
 
-3. Gerenciamento de Produtos (gerenciamentoProdutos.java)
+3. Gerenciamento de Produtos (Program.java)
 Implemente um programa de gerenciamento de produtos que permita a adição, remoção e consulta de produtos. Cada produto deve ter um nome, preço e quantidade em estoque. Forneça uma interface amigável para o usuário interagir com essas operações.
 
 4. Login Verification (Login.java)
