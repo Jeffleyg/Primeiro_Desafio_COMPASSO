@@ -8,7 +8,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		try{
+		try{ // tratamento de ecxeption
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Digite um frase ou uma palavra para verificar seéum palindromo ou não (Vamos lá): ");
 			String input = sc.nextLine();
