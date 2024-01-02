@@ -128,8 +128,12 @@ public class Program {
 
 
     private static void listProducts(HashSet<Produto> produtos) {
-        for (Produto p : produtos) {
+        if(produtos.isEmpty()){
+            System.out.println("Não tem produtos armazenados!!!\n");
+        }else{
+            for (Produto p : produtos) {
             printProductDetails(p);
+            }
         }
     }
 
