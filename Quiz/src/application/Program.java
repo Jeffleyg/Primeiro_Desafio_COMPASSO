@@ -1,6 +1,5 @@
 package application;
 
-import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -22,7 +21,7 @@ public class Program {
 		
 		// arrays para amazenar as perguntas
 		String[] question = {
-				"Qual é nome do protagonista do anime one piece ?",
+				"Qual é do protagonista do anime one piece ?",
 				"Qual é o nome do atual presidente do Brasil ?",
 				"Em qual ano a Compasso UOL foi fundada ? ",
 				"Qual é o nome do Grupo que a Compasso UOL pertence?",
@@ -45,22 +44,16 @@ public class Program {
 		for(int i = 0; i < question.length; i++ ) {
 			System.out.println(question[i]);
 			// entrada da resposta do usuario
-			try{
-				String repUser = sc.next().toUpperCase();
-				
-				// as condições 
-				if(repUser.equals(response[i])){
-					System.out.println("Acertou");
-					right += 1;
-				}
-				else {
-					System.out.println("Errado");
-					error += 1;
-				}
-			}catch(InputMismatchException e){
-				System.out.println("Error! resposta invalida, insire uma resposta válida!!! ");
-				sc.nextLine();
-				i--;
+			String repUser = sc.next().toUpperCase();
+			
+			// as condições 
+			if(repUser.equals(response[i])){
+				System.out.println("Acertou");
+				right += 1;
+			}
+			else {
+				System.out.println("Errado");
+				error += 1;
 			}
 		}
 		
