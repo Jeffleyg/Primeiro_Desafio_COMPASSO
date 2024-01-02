@@ -117,6 +117,7 @@ public class Program {
     }
 
 
+
     private static boolean containsProductCode(HashSet<Produto> produtos, int codigo) {
         for (Produto produto : produtos) {
             if (produto.getCodigo() == codigo) {
