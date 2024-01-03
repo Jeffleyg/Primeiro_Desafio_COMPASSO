@@ -9,7 +9,7 @@ Desenvolva um programa para determinar se um cliente tem acesso a um bônus espe
 ### Execução:
 Certifique-se de ter o Java instalado em sua máquina.
 Clone o repositório: `git clone https://github.com/Jeffleyg/Primeiro_Desafio_COMPASSO.git`
-Navegue até o diretório do desafio 1: `cd nome-do-repositorio/desafio1-bonus-access`
+Navegue até o diretório do desafio 1: `cd Primeiro_Desafio_COMPASSO/bonus`
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
@@ -24,7 +24,7 @@ Desenvolva um programa que analise uma string e determine se ela contém emotico
 ### Execução:
 Certifique-se de ter o Java instalado em sua máquina.
 Clone o repositório: `git clone https://github.com/Jeffleyg/Primeiro_Desafio_COMPASSO.git`
-Navegue até o diretório do desafio 2: `cd nome-do-repositorio/desafio2-emotion-icons`
+Navegue até o diretório do desafio 2: `cd Primeiro_Desafio_COMPASSO/emotion-icons`
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
@@ -38,7 +38,7 @@ Implementei um programa de gerenciamento de produtos. Este programa permite a at
 ### Execução:
 Certifique-se de ter o Java instalado em sua máquina.
 Clone o repositório: `git clone https://github.com/Jeffleyg/Primeiro_Desafio_COMPASSO.git`
-Navegue até o diretório do desafio 3: `cd nome-do-repositorio/desafio3-gerenciamento-produtos`
+Navegue até o diretório do desafio 3: `cd Primeiro_Desafio_COMPASSO/gerenciamento-produtos`
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
@@ -54,7 +54,7 @@ Crie um programa para validar o login do usuário, solicitando credenciais e ver
 ### Execução:
 Certifique-se de ter o Java instalado em sua máquina.
 Clone o repositório: `git clone https://github.com/Jeffleyg/Primeiro_Desafio_COMPASSO.git`
-Navegue até o diretório do desafio 4: `cd nome-do-repositorio/desafio4-login-verification`
+Navegue até o diretório do desafio 4: `cd Primeiro_Desafio_COMPASSO/login`
 Execute o programa: `java Login.java`
 
 ### Funcionamento:
@@ -69,7 +69,7 @@ Elabore um programa para verificar se uma palavra ou frase fornecida pelo usuár
 ### Execução:
 Certifique-se de ter o Java instalado em sua máquina.
 Clone o repositório: `git clone https://github.com/Jeffleyg/Primeiro_Desafio_COMPASSO.git`
-Navegue até o diretório do desafio 5: `cd nome-do-repositorio/desafio5-palindromo-verifier`
+Navegue até o diretório do desafio 5: `cd Primeiro_Desafio_COMPASSO/palindromo`
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
@@ -83,7 +83,7 @@ Desenvolva um programa que implemente um quiz simples, fazendo perguntas ao usu�
 ### Execução:
 Certifique-se de ter o Java instalado em sua máquina.
 Clone o repositório: `git clone https://github.com/Jeffleyg/Primeiro_Desafio_COMPASSO.git`
-Navegue até o diretório do desafio 6: `cd nome-do-repositorio/desafio6-quiz`
+Navegue até o diretório do desafio 6: `cd Primeiro_Desafio_COMPASSO/quiz`
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
