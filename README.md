@@ -42,7 +42,7 @@ Navegue até o diretório do desafio 3: `cd Primeiro_Desafio_COMPASSO/gerenciame
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
-- O programa tem uma partir conforme o enunciado e uma parte atualizada.
+- O programa tem uma partir conforme o enunciado e uma parte atualizada. Digite 1 para acessar a partir conforme o enunciado e 2 para acessar a partir atualizada
 - O programa permite a atualização da quantidade de estoque.
 - O programa permite a adição, remoção e consulta de produtos.
 - Cada produto é caracterizado por nome, preço e quantidade em estoque.
@@ -58,7 +58,7 @@ Navegue até o diretório do desafio 4: `cd Primeiro_Desafio_COMPASSO/login`
 Execute o programa: `java Login.java`
 
 ### Funcionamento:
-- O programa solicita as credenciais do usuário.
+- O programa solicita as credenciais do usuário (usuario e senha).
 - Verifica se as credenciais correspondem aos dados armazenados.
 - Exibe uma mensagem de saudação com base no horário de acesso ou informa que o login falhou.
 
@@ -73,6 +73,7 @@ Navegue até o diretório do desafio 5: `cd Primeiro_Desafio_COMPASSO/palindromo
 Execute o programa: `java Program.java`
 
 ### Funcionamento:
+- Digite uma palavra ou frase.
 - O programa verifica se a palavra ou frase é um palíndromo.
 - Utiliza a classe StringBuilder para facilitar a manipulação de strings.
 
@@ -88,7 +89,7 @@ Execute o programa: `java Program.java`
 
 ### Funcionamento:
 - O programa apresenta perguntas ao usuário.
-- Verifica se as respostas estão corretas e exibe a pontuação total no final.
+- Verifica se as respostas estão corretas e exibe a pontuação total no final (os acertos e os errados).
 
 ## Como Contribuir
 
