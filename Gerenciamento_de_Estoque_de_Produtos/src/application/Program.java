@@ -12,7 +12,6 @@ public class Program {
     public static void main(String[] args) throws CauseException {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-
         HashSet<Produto> produtos = new HashSet<>();
         System.out.println("Seja Bem-vindo no nosso sistema!!!");
         System.out.println("Escolha a versão que você quer usar (1 ou 2): ");
