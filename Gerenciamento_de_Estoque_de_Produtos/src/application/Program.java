@@ -12,19 +12,25 @@ public class Program {
     public static void main(String[] args) throws CauseException {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-
         HashSet<Produto> produtos = new HashSet<>();
         System.out.println("Seja Bem-vindo no nosso sistema!!!");
         System.out.println("Escolha a versão que você quer usar (1 ou 2): ");
         int n = sc.nextInt();
 
+        
         switch (n) {
             case 1:
-            	System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Bem vindo ao nosso sistema¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
-                Produto produto = readProduct(produtos, sc);
-                produtos.add(produto);
-                printProductDetails(produto);
+                try{
+                    System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Bem vindo ao nosso sistema¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
+                    Produto produto = readProduct(produtos, sc);
+                    produtos.add(produto);
+                    printProductDetails(produto);
+                    break;
+                }catch(InputMismatchException e){
+                    System.out.println("Error! Entrada Inválida");
+                }
                 break;
+                
             case 2:
                 try {
                     System.out.println("¨¨¨¨¨¨¨¨¨¨Bem Vindo ao nosso sistema (Atualizada)¨¨¨¨¨¨¨¨¨\n");
@@ -108,7 +114,6 @@ public class Program {
                 Produto produto = new Produto(nome, codigo, preco, quantidadeEstoque);
                 produto.produtosComprados(qtProdutosComprados);
                 produto.produtosVendidos(qtProdutosVendidos);
-
                 return produto;
             } catch (CauseException e) {
                 System.out.println(e.getMessage());
