@@ -12,18 +12,23 @@ public class Program {
     public static void main(String[] args) throws CauseException {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-
         HashSet<Produto> produtos = new HashSet<>();
-        System.out.println("Seja Bem-vindo no nosso sistema!!!");
+        System.out.println("Seja Bem-vindo ao nosso sistema!!!");
         System.out.println("Escolha a versão que você quer usar (1 ou 2): ");
         int n = sc.nextInt();
 
         switch (n) {
             case 1:
-            	System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Bem vindo ao nosso sistema¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
-                Produto produto = readProduct(produtos, sc);
-                produtos.add(produto);
-                printProductDetails(produto);
+            	try {
+	            	System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Bem vindo ao nosso sistema¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
+	                Produto produto = readProduct(produtos, sc);
+	                produtos.add(produto);
+	                break;
+            	} catch (CauseException e) {
+                    System.out.println("Erro ao ler o produto: " + e.getMessage());
+                } catch (InputMismatchException e) {
+                    System.out.println("Error! Entrada Inválida");
+                }
                 break;
             case 2:
                 try {
@@ -37,12 +42,11 @@ public class Program {
                         System.out.println("4. Deletar Produto");
                         System.out.println("5. Sair");
                         System.out.println("Escolha a opção desejada: ");
-
                         choice = sc.nextInt();
 
                         switch (choice) {
                             case 1:
-                                Produto newProduto = readProduct(produtos, sc);
+                                Produto newProduto = readProductAtualizado(produtos, sc);
                                 produtos.add(newProduto);
                                 break;
                             case 2:
@@ -75,17 +79,16 @@ public class Program {
     }
     
     
-    private static Produto readProduct(HashSet<Produto> produtos, Scanner sc) {
+    private static Produto readProduct(HashSet<Produto> produtos, Scanner sc) throws CauseException {
         System.out.println("Nome do produto: ");
         String nome = sc.next();
-
         int codigo;
         do {
             System.out.println("Código do produto: ");
             codigo = sc.nextInt();
 
             if (containsProductCode(produtos, codigo)) {
-                System.out.println("Código já existe. Digite um código único. por favor!!!");
+                System.out.println("Código já existe. Digite um código único, por favor!!!");
             } else {
                 break;
             }
@@ -97,26 +100,19 @@ public class Program {
         int quantidadeEstoque = sc.nextInt();
 
         int qtProdutosComprados, qtProdutosVendidos;
-        
-        do {
-            System.out.println("Digite a quantidade de produtos comprados: ");
-            qtProdutosComprados = sc.nextInt();
-            System.out.println("Digite a quantidade de produtos vendidos: ");
-            qtProdutosVendidos = sc.nextInt();
+        Produto produto = new Produto(nome, codigo, preco, quantidadeEstoque);
+        System.out.println("Digite a quantidade de produtos comprados: ");
+        qtProdutosComprados = sc.nextInt();
+        produto.produtosComprados(qtProdutosComprados);
+        printProductDetails(produto);
 
-            try {
-                Produto produto = new Produto(nome, codigo, preco, quantidadeEstoque);
-                produto.produtosComprados(qtProdutosComprados);
-                produto.produtosVendidos(qtProdutosVendidos);
+        System.out.println("\nDigite a quantidade de produtos vendidos: ");
+        qtProdutosVendidos = sc.nextInt();
+        produto.produtosVendidos(qtProdutosVendidos);
+        printProductDetails(produto);
 
-                return produto;
-            } catch (CauseException e) {
-                System.out.println(e.getMessage());
-            }
-        } while (true);
+        return produto;
     }
-
-
 
     private static boolean containsProductCode(HashSet<Produto> produtos, int codigo) {
         for (Produto produto : produtos) {
@@ -128,13 +124,37 @@ public class Program {
     }
 
 
-    private static void listProducts(HashSet<Produto> produtos) {
-        if(produtos.isEmpty()){
-            System.out.println("Não tem produtos armazenados!!!\n");
-        }else{
-            for (Produto p : produtos) {
-            printProductDetails(p);
+    private static Produto readProductAtualizado(HashSet<Produto> produtos, Scanner sc) throws CauseException {
+        System.out.println("Nome do produto: ");
+        String nome = sc.next();
+
+        int codigo;
+        do {
+            System.out.println("Código do produto: ");
+            codigo = sc.nextInt();
+
+            if (containsProductCode(produtos, codigo)) {
+                System.out.println("Código já existe. Digite um código único, por favor!!!");
+            } else {
+                break;
             }
+        } while (true);
+
+        System.out.println("Preço do produto: ");
+        double preco = sc.nextDouble();
+        System.out.println("Quantidade de estoque: ");
+        int quantidadeEstoque = sc.nextInt();
+        Produto produto = new Produto(nome, codigo, preco, quantidadeEstoque);
+        return produto;
+    }
+
+    private static void listProducts(HashSet<Produto> produtos) {
+    	if(produtos.isEmpty()) {
+    		System.out.println("Não tem produtos armazenados!\n");
+    	}else{
+	        for (Produto p : produtos) {
+	            printProductDetails(p);
+	            }
         }
     }
 
@@ -143,14 +163,44 @@ public class Program {
         int codigo = sc.nextInt();
 
         for (Produto p : produtos) {
-            if (p.getCodigo() == codigo) {
-                System.out.println("Digite o novo preço do produto: ");
-                double newPreco = sc.nextDouble();
-                p.setPrice(newPreco);
 
-                System.out.println("Produto atualizado com sucesso!");
-                printProductDetails(p);
-                return;
+            if (p.getCodigo() == codigo) {
+            	System.out.println("Escolhe o que qoer atualizar: ");
+                System.out.println("1. Preço");
+                System.out.println("2. Comprar");
+                System.out.println("3. Vender ");
+                int num = sc.nextInt();
+
+                switch (num) {
+                    case 1:
+                        System.out.println("Digite o novo preço do produto: ");
+                        double newPreco = sc.nextDouble();
+                        p.setPrice(newPreco);
+                        printProductDetails(p);
+                        System.out.println("Produto atualizado com sucesso!");
+                        return;
+                    case 2:
+                        System.out.println("Digite a quantidade de produtos comprados: ");
+                        int qtProdutosComprados = sc.nextInt();
+                        p.produtosComprados(qtProdutosComprados);
+                        printProductDetails(p);
+                        System.out.println("Produto atualizado com sucesso!");
+                        return;
+                    case 3:
+                        System.out.println("\nDigite a quantidade de produtos vendidos: ");
+                        int qtProdutosVendidos = sc.nextInt();
+                        
+                        try {
+                            p.produtosVendidos(qtProdutosVendidos);
+                            printProductDetails(p);
+                            System.out.println("Produto atualizado com sucesso!");
+                        } catch (CauseException e) {
+                            System.out.println("Erro ao vender o produto: " + e.getMessage());
+                        }
+                        return;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
             }
         }
 
@@ -168,15 +218,16 @@ public class Program {
                 return;
             }
         }
-
         System.out.println("Produto não encontrado.");
     }
 
     private static void printProductDetails(Produto p) {
         System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
+        System.out.printf("----------------Produto %d ------------\n",p.getCodigo());
         System.out.printf("Nome: %s\n", p.getNome());
         System.out.printf("Código: %d\n", p.getCodigo());
         System.out.printf("Preço: %.2f\n", p.getPrice());
         System.out.printf("Quantidade de estoque: %d\n", p.getQuantidadeEstoque());
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n");
     }
 }
