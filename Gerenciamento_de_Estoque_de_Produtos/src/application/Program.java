@@ -20,11 +20,17 @@ public class Program {
 
         switch (n) {
             case 1:
-            	System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Bem vindo ao nosso sistema¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
-                Produto produto = readProduct(produtos, sc);
-                produtos.add(produto);
-                printProductDetails(produto);
+                try{
+                    System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨Bem vindo ao nosso sistema¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
+                    Produto produto = readProduct(produtos, sc);
+                    produtos.add(produto);
+                    printProductDetails(produto);
+                    break;
+                }catch(InputMismatchException e){
+                    System.out.println("Error! Entrada Inválida");
+                }
                 break;
+                
             case 2:
                 try {
                     System.out.println("¨¨¨¨¨¨¨¨¨¨Bem Vindo ao nosso sistema (Atualizada)¨¨¨¨¨¨¨¨¨\n");
