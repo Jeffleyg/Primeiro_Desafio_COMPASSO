@@ -17,6 +17,7 @@ public class Program {
         System.out.println("Escolha a versão que você quer usar (1 ou 2): ");
         int n = sc.nextInt();
 
+        
         switch (n) {
             case 1:
                 try{
