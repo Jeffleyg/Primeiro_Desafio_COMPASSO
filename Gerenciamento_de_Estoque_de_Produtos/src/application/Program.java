@@ -189,7 +189,6 @@ public class Program {
                     case 3:
                         System.out.println("\nDigite a quantidade de produtos vendidos: ");
                         int qtProdutosVendidos = sc.nextInt();
-                        
                         try {
                             p.produtosVendidos(qtProdutosVendidos);
                             printProductDetails(p);
