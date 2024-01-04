@@ -114,7 +114,6 @@ public class Program {
                 Produto produto = new Produto(nome, codigo, preco, quantidadeEstoque);
                 produto.produtosComprados(qtProdutosComprados);
                 produto.produtosVendidos(qtProdutosVendidos);
-
                 return produto;
             } catch (CauseException e) {
                 System.out.println(e.getMessage());
